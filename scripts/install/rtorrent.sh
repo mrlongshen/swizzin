@@ -30,12 +30,20 @@ schedule = watch_directory,5,5,load.start=/home/${user}/rwatch/*.torrent
 session.path.set = /home/${user}/.sessions/
 throttle.global_down.max_rate.set = 0
 throttle.global_up.max_rate.set = 0
-throttle.max_peers.normal.set = 100
-throttle.max_peers.seed.set = -1
-throttle.max_uploads.global.set = 100
-throttle.min_peers.normal.set = 1
-throttle.min_peers.seed.set = -1
+throttle.max_peers.normal.set = 30
+throttle.max_peers.seed.set = 40
+throttle.max_uploads.global.set = 2
+throttle.min_peers.normal.set = 2
+throttle.min_peers.seed.set = 2
 trackers.use_udp.set = yes
+network.max_open_files.set = 128
+network.max_open_sockets.set = 256
+network.http.max_open.set = 32
+network.send_buffer.size.set = 4M
+network.receive_buffer.size.set = 4M
+pieces.hash.on_completion.set = no
+pieces.preload.type.set = 1
+pieces.memory.max.set = 2048M
 
 execute = {sh,-c,/usr/bin/php /srv/rutorrent/php/initplugins.php ${user} &}
 

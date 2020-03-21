@@ -53,7 +53,7 @@ secure_chroot_dir=/var/run/vsftpd/empty
 ###################
 #Set a custom port#
 ###################
-#listen_port=
+listen_port=2018
 VSC
 
 # Check for LE cert, and copy it if available.
